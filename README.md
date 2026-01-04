@@ -1,6 +1,6 @@
 # Architecting the Future of Health Work: AI Stewardship, Access, and Opportunity
 
-![FCAP Strategy Whiteboard](./2026-01-04-FCAP-Strategy.PNG)
+![FCAP Strategy Whiteboard](./2026-01-04-FCAP-Strategy.png)
 
 > **Context:** Presentation to the NC Alliance for Health Professions
 > **Date:** January 6, 2026
@@ -9,7 +9,7 @@
 ---
 
 ## 📥 Resource Download
-**[📄 Download the Full Presentation Deck (PDF)](./2025-01-06-Grambow-CTSI-NCAHPD.PDF)**
+**[📄 Download the Full Presentation Deck (PDF)](./2025-01-06-Grambow-CTSI-NCAHPD.pdf)**
 
 ---
 
