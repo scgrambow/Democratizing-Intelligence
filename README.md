@@ -11,6 +11,8 @@
 ## 📥 Resource Download
 **[📄 Download the Full Presentation Deck (PDF)](./2025-01-06-Grambow-CTSI-NCAHPD.pdf)**
 
+> 📊 **Want to see download statistics?** Check out our [Download Statistics Guide](./DOWNLOAD_STATS.md) to learn how to view repository metrics and traffic data.
+
 ---
 
 ## 📖 The Narrative: A Shift in Competency
