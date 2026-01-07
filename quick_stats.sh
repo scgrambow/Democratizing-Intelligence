@@ -16,7 +16,7 @@ echo ""
 
 # Set up authentication header if token is provided
 if [ -n "$TOKEN" ]; then
-    AUTH_HEADER="Authorization: token $TOKEN"
+    AUTH_HEADER="Authorization: Bearer $TOKEN"
     echo "Using authenticated requests (higher rate limits)"
 else
     AUTH_HEADER=""

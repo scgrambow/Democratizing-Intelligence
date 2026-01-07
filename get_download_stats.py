@@ -11,7 +11,7 @@ This script retrieves:
 Note: GitHub API only retains traffic data for the last 14 days.
 """
 
-import json
+import os
 import sys
 from datetime import datetime
 
@@ -31,7 +31,6 @@ def get_github_token():
     Get GitHub token from environment or prompt user.
     For public repositories, token is optional but recommended for higher rate limits.
     """
-    import os
     token = os.environ.get('GITHUB_TOKEN')
     if not token:
         print("Note: No GITHUB_TOKEN found in environment. You may hit rate limits.")
@@ -44,7 +43,7 @@ def fetch_stats(endpoint, token=None):
     url = f"https://api.github.com/repos/{OWNER}/{REPO}/{endpoint}"
     headers = {}
     if token:
-        headers['Authorization'] = f'token {token}'
+        headers['Authorization'] = f'Bearer {token}'
     
     response = requests.get(url, headers=headers)
     
