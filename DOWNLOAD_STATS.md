@@ -2,6 +2,25 @@
 
 ## Quick Answer: How Many Downloads Have There Been?
 
+### Current Answer (as of the question):
+
+**Repository Traffic (last 14 days only):**
+- To see the current numbers, you must:
+  1. Have push access to the repository, AND
+  2. Visit: https://github.com/scgrambow/Democratizing-Intelligence/graphs/traffic
+
+**PDF File Downloads:**
+- ❌ **Not tracked** - GitHub does not track individual file downloads for files stored in the repository
+- ✅ **Solution**: Create a GitHub Release (see instructions below)
+
+### Why Can't I See the Numbers Right Now?
+
+1. **Traffic data requires authentication** - Only repository owners/collaborators can view traffic statistics
+2. **14-day limitation** - GitHub only retains the last 14 days of traffic data
+3. **PDF downloads not tracked** - Individual file downloads are not tracked unless using GitHub Releases
+
+### What You Can Do Now:
+
 **For repository owners/collaborators:** To see the exact number of views and clones:
 
 1. **Visit GitHub Insights** (easiest method):
