@@ -1,6 +1,7 @@
 #!/bin/bash
 # Quick script to fetch repository statistics from GitHub API
 # Usage: ./quick_stats.sh [github_token]
+# Note: Script continues on errors to show all available information
 
 OWNER="scgrambow"
 REPO="Democratizing-Intelligence"
@@ -73,8 +74,9 @@ if [ -n "$AUTH_HEADER" ]; then
             TOTAL_VIEWS=$(echo "$VIEWS" | jq -r '.count // "N/A"')
             UNIQUE_VIEWS=$(echo "$VIEWS" | jq -r '.uniques // "N/A"')
         else
-            TOTAL_VIEWS=$(echo "$VIEWS" | grep '"count"' | head -1 | grep -oP '\d+')
-            UNIQUE_VIEWS=$(echo "$VIEWS" | grep '"uniques"' | head -1 | grep -oP '\d+')
+            # Portable sed-based parsing (works on macOS and Linux)
+            TOTAL_VIEWS=$(echo "$VIEWS" | grep '"count"' | head -1 | sed 's/[^0-9]*\([0-9][0-9]*\).*/\1/')
+            UNIQUE_VIEWS=$(echo "$VIEWS" | grep '"uniques"' | head -1 | sed 's/[^0-9]*\([0-9][0-9]*\).*/\1/')
         fi
         echo "Total Views: $TOTAL_VIEWS"
         echo "Unique Visitors: $UNIQUE_VIEWS"
@@ -91,8 +93,9 @@ if [ -n "$AUTH_HEADER" ]; then
             TOTAL_CLONES=$(echo "$CLONES" | jq -r '.count // "N/A"')
             UNIQUE_CLONES=$(echo "$CLONES" | jq -r '.uniques // "N/A"')
         else
-            TOTAL_CLONES=$(echo "$CLONES" | grep '"count"' | head -1 | grep -oP '\d+')
-            UNIQUE_CLONES=$(echo "$CLONES" | grep '"uniques"' | head -1 | grep -oP '\d+')
+            # Portable sed-based parsing (works on macOS and Linux)
+            TOTAL_CLONES=$(echo "$CLONES" | grep '"count"' | head -1 | sed 's/[^0-9]*\([0-9][0-9]*\).*/\1/')
+            UNIQUE_CLONES=$(echo "$CLONES" | grep '"uniques"' | head -1 | sed 's/[^0-9]*\([0-9][0-9]*\).*/\1/')
         fi
         echo "Total Clones: $TOTAL_CLONES"
         echo "Unique Cloners: $UNIQUE_CLONES"

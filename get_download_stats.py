@@ -11,10 +11,16 @@ This script retrieves:
 Note: GitHub API only retains traffic data for the last 14 days.
 """
 
-import requests
 import json
 import sys
 from datetime import datetime
+
+try:
+    import requests
+except ImportError:
+    print("Error: 'requests' library not found.")
+    print("Install it with: pip install requests")
+    sys.exit(1)
 
 # Repository information
 OWNER = "scgrambow"
@@ -172,11 +178,4 @@ def main():
         print("=" * 60)
 
 if __name__ == "__main__":
-    try:
-        import requests
-    except ImportError:
-        print("Error: 'requests' library not found.")
-        print("Install it with: pip install requests")
-        sys.exit(1)
-    
     main()
